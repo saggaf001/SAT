@@ -917,7 +917,7 @@ function switchVettingMode(mode){currentVettingMode=mode;['individual','till'].f
 /* INDIVIDUAL VETTING */
 let startkeyIssued=false,failedVetting=0,swapped=false,customNoteActive=false,customNoteText='';
 let flags={barred:false,menu:false,yob:false,purged:false};
-const flagTexts={barred:'Suspended and Barred',menu:'Menu Updated',yob:'Failed YOB to Visit RC',purged:'MNRF-True Purged and advised customer to perfom Location update'};
+const flagTexts={barred:'Suspended and Barred - Advised to visit RC for assistance',menu:'Menu Updated',yob:'Failed YOB to Visit RC',purged:'MNRF-True Purged and advised customer to perfom Location update'};
 function toggleFlag(key){flags[key]=!flags[key];document.getElementById(key+'-btn').classList.toggle('active',flags[key]);if(key==='yob'){const row=document.getElementById('yob-input-row');row.style.display=flags[key]?'flex':'none';if(!flags[key]){document.getElementById('yob-input').value='';}}if(flags[key])statsBumpVettingButton(key==='barred'?'Barred':key==='menu'?'Menu Updated':key==='yob'?'Failed YOB':'Purged');updateTextArea();showToast(flags[key]?key.toUpperCase()+' status set':key.toUpperCase()+' status removed');}
 function setSwapped(){swapped=!swapped;document.getElementById('swapped-btn').classList.toggle('active',swapped);if(swapped)statsBumpVettingButton('Swapped');updateTextArea();showToast(swapped?'Swapped status set':'Swapped status removed');}
 function setStartkeyIssued(){startkeyIssued=!startkeyIssued;document.getElementById('startkey-issued-btn').classList.toggle('active',startkeyIssued);if(startkeyIssued)statsBumpVettingButton('Startkey Issued');updateTextArea();showToast(startkeyIssued?'Startkey Issued marked':'Startkey Issued removed');}

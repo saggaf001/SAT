@@ -11,8 +11,11 @@
 body{font-family:'Inter',sans-serif;background:var(--grey-50);color:var(--grey-900);min-height:100vh;}
 .topbar{background:var(--green-dark);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 28px;height:56px;box-shadow:0 2px 8px rgba(0,0,0,.18);}
 .topbar-logo{display:flex;align-items:center;gap:12px;}
-.logo-icon{width:36px;height:36px;background:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;}
+.logo-icon{height:28px;display:flex;align-items:center;justify-content:center;}
 .logo-icon svg{width:22px;height:22px;}
+.logo-icon img{height:100%;width:auto;display:block;}
+.topbar-divider{width:1.5px;height:20px;background:rgba(255,255,255,.45);flex-shrink:0;}
+.topbar-appname{color:#fff;font-family:'Inter',sans-serif;font-size:13px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;white-space:nowrap;}
 .logo-text{font-size:18px;font-weight:700;color:#fff;}
 .logo-text span{color:#7DEBB0;font-weight:400;font-size:13px;display:block;line-height:1;}
 .topbar-badge{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25);color:#fff;padding:4px 12px;border-radius:20px;font-size:12px;font-weight:600;letter-spacing:.6px;}
@@ -328,6 +331,10 @@ body.dark-mode .notif-badge{background:var(--amber-light);color:#ffc94d;border-c
 body.dark-mode .notif-badge.granted{background:var(--green-light);color:#7fe0a0;border-color:var(--green-mid);}
 body.dark-mode #yob-input-row{background:var(--amber-light) !important;border-color:#6b4f14 !important;}
 body.dark-mode #yob-input{background:#1a1400 !important;color:#ffc94d !important;border-color:#6b4f14 !important;}
+body.dark-mode #primary-menu-row{background:var(--amber-light) !important;border-color:#6b4f14 !important;}
+body.dark-mode #primary-menu-row span{color:#ffc94d !important;}
+body.dark-mode #id-input-row{background:var(--amber-light) !important;border-color:#6b4f14 !important;}
+body.dark-mode #id-input{background:#1a1400 !important;color:#ffc94d !important;border-color:#6b4f14 !important;}
 body.dark-mode .vetting-mode-badge{background:var(--grey-200);color:var(--grey-400);}
 body.dark-mode .vetting-mode-btn.active .vetting-mode-badge{background:var(--green-light);color:#7fe0a0;}
 body.dark-mode .tab-counter{background:rgba(0,0,0,.35);}
@@ -339,8 +346,9 @@ body.dark-mode ::-webkit-scrollbar-thumb{background:var(--green-mid);}
 <body>
 <div class="topbar">
   <div class="topbar-logo">
-    <div class="logo-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M17 7C17 7 14.5 5 12 5C8.5 5 6 7.5 6 10C6 14 10 14.5 12 15.5C14.5 16.5 18 17.5 18 21C18 23 15.5 19.5 12 19.5C9 19.5 6.5 18 6.5 18" stroke="#00A651" stroke-width="2.5" stroke-linecap="round"/></svg></div>
-    <div class="logo-text">Safaricom<span>Customer Care · Agent Tools</span></div>
+    <div class="logo-icon"><img src="data:image/webp;base64,UklGRiYFAABXRUJQVlA4WAoAAAAQAAAAdwAAHgAAQUxQSHcCAAABkFXbVh1LWwISjoRIQEIcNA4uDioOEgeUg7SDIyESkICE9QGk0o/6j4gJ0F9pZvq+8eUNaCV8FXs15tsXiQ6t1ol/jeT1WIMkLWdXvkS6jqibF5C+Qiw56HaGqm+Ysz7NkP5/QU8WDv3342lP1Et3Q0rrU+6+/ythPzRNZ61eYvdT7c5PA+whwP+R5Yoa28W4Bpmbbhr9/+bnMk0vZtJuunsAzZ9y9/1fCOUKmq7AYRbfFH3q0Ez/VbuuoPkGTb1ZF/KWZDGmQU1RUty2qCWuUZZS0rLtYU0pdksue7IuFj+zSbKUUgh5S5Lilu3GUmvQzQPI3XBpQD2BAbj0AnhVKFqBFbAKRdLOMMucvv2SFmBtgJsDNUx+tWq6mwHqmayzyvxGYl4UgXZnZ5zkTBcZ84s+j14QdTtUxiVICfD0vnGlVRew5XqD5m1kQNvSG4vAuWbAR8cboLyB34MXFH1oPuIKcqiSfOZSAIq03PAgabABUVLQAc2kA9qgSA1cusC7F2CfSMvhHVkVfks6bkVglVRnq2YnoKGDS0qAdUmqUCQfrUDRo7YBpSuSto/ivfjICdcfsQasH/10UusucEnnLQOyZDzxBqKkoANakAqgJ0IFiJ9Eaolx3YGsA3jZL26pQYu2P7ICNS6vFiJwLmsFf2Snz58U5tUUuXljY/6ZKuMkZ2pPGMNqkxDLJqU6qYukbXDdC1dX2yNWR1lWR1lPlBG15JTS7viifj3cr5KD+uR+xrWUIqVtS5IUsvsRjlKSFndfuqOUJCkkdz+iJKXT/VgkmbtH6XTP0uG+18nUo74lt9tm+p5+w3PQNzXvaklBXzeYBX1hAFZQOCCIAgAAMBQAnQEqeAAfAAAAACWIA1T1Bflf4Z6oVwD8AP2A/wHOGbT8gGVmcAfx38cPYBzAH8P/HjgAfob/UfUA/oHWAfqB1gHoAfqT6O/9m/lfwD/sJ+2PwC/xn+If0b69+UA/gGul+maxAfjB+s2iA/FXIK/xm1ADUAf4DyM/xA6gD+Gfwj+efkH/XOQg/QA7NbidmmV2oclqX7s+gvOBYqL8E8K1pDdtAp1nDEAA/v//xRKG//+cAO6JlXkJOOZa8NN6oLcuIP/SVxgRpf2qUW3mF0tF/5KjKO/W1///vsBBH+8pabHM3GYEiHwcrnn641HZ3Da6QGEzp3Yf/2tKRdfalQdxuCIfLRZGllYbpbratTvVNScmvCr1B9gc9StwcXUF1EjZqb9EBNKNmg8bF3dVoOLa5dW6/z/ok2Lqhsagony7rm/od6/PQG04OZSmooVqR1z9lvk1b2L2GL9sfwGtERg//zttJOmeJwxEbm1rZcsvBlf0oPWxSBxX5hRLf/QZyV7B9ME/pc/5cK+XmF65fn/vCFs603e/+m1YIGPj4qce+PJCf/9ixhMQifUg3Or6B17yeLY5Xn5VuFFYu55gWc0//+tRKmayaAvBMJQulJEsGLR3b23t+1/sBf///3zisF/zPs2qHxDWVmGFZBGrMj7v89/DGX1k5gstS9mr5qLEdufN7CPCtIFWAAMm2nSwGgTXlUWGg//XXLMySV8dIKU8JuicrPbcTZqI1R35S3/+y+1rirREEm6QySiIdy8i3xDJI2bKTl19/q0qX2mu/00j/uW9bApPDjKIHnd9EJf+SWGFCkdniUNA0VABNh1DOyJgzbhiyKaWBJylns+LwEvxsSWAAAAA" alt="Safaricom"></div>
+    <div class="topbar-divider"></div>
+    <div class="topbar-appname">CEE TOOL - MADE BY SAGGAF</div>
   </div>
   <div style="display:flex;align-items:center;gap:10px;">
     <div class="dm-toggle" onclick="toggleDarkMode()" title="Toggle dark mode">
@@ -416,8 +424,21 @@ body.dark-mode ::-webkit-scrollbar-thumb{background:var(--green-mid);}
     <div class="status-row" style="margin-top:12px;">
       <button type="button" class="status-btn btn-flag-barred" id="barred-btn" onclick="toggleFlag('barred')"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg>BARRED</button>
       <button type="button" class="status-btn btn-flag-menu" id="menu-btn" onclick="toggleFlag('menu')"><svg viewBox="0 0 24 24"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>MENU UPDATED</button>
-      <button type="button" class="status-btn btn-flag-yob" id="yob-btn" onclick="toggleFlag('yob')"><svg viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>FAILED YOB</button>
+      <button type="button" class="status-btn btn-flag-yob" id="primary-btn" onclick="toggleFailedPrimary()"><svg viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>FAILED PRIMARY</button>
       <button type="button" class="status-btn btn-flag-purged" id="purged-btn" onclick="toggleFlag('purged')"><svg viewBox="0 0 24 24"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14H6L5 6M10 11v6M14 11v6M9 6V4h6v2"/></svg>PURGED</button>
+    </div>
+    <div id="primary-menu-row" style="display:none;align-items:center;gap:8px;margin-bottom:10px;padding:8px 10px;background:var(--amber-light);border:1.5px solid #FDE68A;border-radius:var(--radius);flex-wrap:wrap;">
+      <span style="font-size:11.5px;font-weight:600;color:#92400E;white-space:nowrap;">Failed Primary — reason:</span>
+      <button type="button" class="btn-xs btn-xs-amber" onclick="selectPrimaryFail('name')">Wrong Name</button>
+      <button type="button" class="btn-xs btn-xs-amber" onclick="selectPrimaryFail('id')">Wrong ID</button>
+      <button type="button" class="btn-xs btn-xs-amber" onclick="selectPrimaryFail('yob')">Wrong YOB</button>
+      <button type="button" class="btn-custom-cancel" onclick="toggleFailedPrimary()">✕</button>
+    </div>
+    <div id="id-input-row" style="display:none;align-items:center;gap:8px;margin-bottom:10px;padding:8px 10px;background:var(--amber-light);border:1.5px solid #FDE68A;border-radius:var(--radius);">
+      <svg viewBox="0 0 24 24" style="width:14px;height:14px;stroke:#92400E;fill:none;stroke-width:2;flex-shrink:0;"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+      <span style="font-size:11.5px;font-weight:600;color:#92400E;white-space:nowrap;">ID customer said:</span>
+      <input type="text" id="id-input" placeholder="e.g. 12345678" style="flex:1;border:1.5px solid #FDE68A;border-radius:6px;padding:5px 10px;font-size:13px;font-weight:700;color:#92400E;background:#fff;outline:none;max-width:160px;" oninput="updateTextArea()">
+      <span style="font-size:11px;color:#92400E;font-weight:500;">Overrides ID in summary + Failed</span>
     </div>
     <div id="yob-input-row" style="display:none;align-items:center;gap:8px;margin-bottom:10px;padding:8px 10px;background:var(--amber-light);border:1.5px solid #FDE68A;border-radius:var(--radius);">
       <svg viewBox="0 0 24 24" style="width:14px;height:14px;stroke:#92400E;fill:none;stroke-width:2;flex-shrink:0;"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
@@ -938,7 +959,7 @@ function statsBumpSMS(cat,btn){const s=loadStats();s.sms_cats[cat]=(s.sms_cats[c
 function statsResetAll(){if(!confirm('Reset ALL analytics data? This cannot be undone.'))return;localStorage.setItem(STATS_KEY,JSON.stringify(emptyStats()));renderStats();showToast('All stats reset');}
 const CAT_COLOR={'M-PESA Reversals':'','DIY & Self Service':'amber','Fraud & Security':'red','Line & Account Issues':'blue','General':'purple','Banks & Financial Institutions':'','General SMS':'amber','Unknown Numbers':'blue','Merchant / Till':'purple','Batch / CRB':'red','Utilities & Government':'teal','Lipa Mdogo Mdogo':'amber'};
 function makeBarsHTML(obj,maxItems){const sorted=Object.entries(obj).sort((a,b)=>b[1]-a[1]);const shown=maxItems?sorted.slice(0,maxItems):sorted;if(!shown.length)return'<div class="stat-empty">No data yet</div>';const total=shown.reduce((a,b)=>a+b[1],0);const max=shown[0][1]||1;return shown.map(([k,v])=>{const pct=Math.round((v/total)*100);const w=Math.round((v/max)*100);const cls=CAT_COLOR[k]||'';return`<div class="stat-bar-row"><span class="stat-bar-label" title="${k}">${k}</span><div class="stat-bar-track"><div class="stat-bar-fill ${cls}" style="width:${w}%"></div></div><span class="stat-bar-val">${v}</span><span class="stat-bar-pct">${pct}%</span></div>`;}).join('');}
-function renderStats(){const s=loadStats();const today=todayKey();const totalQT=Object.values(s.qt_cats).reduce((a,b)=>a+b,0);const totalSMS=Object.values(s.sms_cats).reduce((a,b)=>a+b,0);const grandTotal=s.vetting.total+totalQT+totalSMS;document.getElementById('stats-tab-total').textContent=grandTotal;document.getElementById('sv-total').textContent=s.vetting.total;document.getElementById('sv-today').textContent=(s.vetting.daily[today]||0)+' today';document.getElementById('sq-total').textContent=totalQT;document.getElementById('sq-today').textContent=(s.qt_daily[today]||0)+' today';document.getElementById('ss-total').textContent=totalSMS;document.getElementById('ss-today').textContent=(s.sms_daily[today]||0)+' today';document.getElementById('sg-total').textContent=grandTotal;if(s.last_updated){const d=new Date(s.last_updated);document.getElementById('stats-last-updated').textContent='Last action: '+d.toLocaleString('en-KE',{hour:'2-digit',minute:'2-digit',day:'numeric',month:'short'});}else{document.getElementById('stats-last-updated').textContent='No actions recorded yet — start using the tool!';}document.getElementById('stats-qt-cats').innerHTML=makeBarsHTML(s.qt_cats);document.getElementById('stats-qt-btns').innerHTML=makeBarsHTML(s.qt_btns,10);document.getElementById('stats-sms-cats').innerHTML=makeBarsHTML(s.sms_cats);const vbEl=document.getElementById('stats-vetting-buttons');if(vbEl){const vb=s.vetting_buttons||{};const BTN_COLORS={'Swapped':'','Startkey Issued':'blue','Failed Vetting':'red','Barred':'red','Menu Updated':'blue','Failed YOB':'amber','Purged':'purple','Custom Note':'teal'};if(Object.keys(vb).length){const sorted=Object.entries(vb).sort((a,b)=>b[1]-a[1]);const total=sorted.reduce((a,b)=>a+b[1],0);const max=sorted[0][1]||1;vbEl.innerHTML=sorted.map(([k,v])=>{const pct=Math.round((v/total)*100);const w=Math.round((v/max)*100);const cls=BTN_COLORS[k]!==undefined?BTN_COLORS[k]:'';return`<div class="stat-bar-row"><span class="stat-bar-label" title="${k}">${k}</span><div class="stat-bar-track"><div class="stat-bar-fill ${cls}" style="width:${w}%"></div></div><span class="stat-bar-val">${v}</span><span class="stat-bar-pct">${pct}%</span></div>`;}).join('');}else{vbEl.innerHTML='<div class="stat-empty">No status buttons used yet</div>';}}}
+function renderStats(){const s=loadStats();const today=todayKey();const totalQT=Object.values(s.qt_cats).reduce((a,b)=>a+b,0);const totalSMS=Object.values(s.sms_cats).reduce((a,b)=>a+b,0);const grandTotal=s.vetting.total+totalQT+totalSMS;document.getElementById('stats-tab-total').textContent=grandTotal;document.getElementById('sv-total').textContent=s.vetting.total;document.getElementById('sv-today').textContent=(s.vetting.daily[today]||0)+' today';document.getElementById('sq-total').textContent=totalQT;document.getElementById('sq-today').textContent=(s.qt_daily[today]||0)+' today';document.getElementById('ss-total').textContent=totalSMS;document.getElementById('ss-today').textContent=(s.sms_daily[today]||0)+' today';document.getElementById('sg-total').textContent=grandTotal;if(s.last_updated){const d=new Date(s.last_updated);document.getElementById('stats-last-updated').textContent='Last action: '+d.toLocaleString('en-KE',{hour:'2-digit',minute:'2-digit',day:'numeric',month:'short'});}else{document.getElementById('stats-last-updated').textContent='No actions recorded yet — start using the tool!';}document.getElementById('stats-qt-cats').innerHTML=makeBarsHTML(s.qt_cats);document.getElementById('stats-qt-btns').innerHTML=makeBarsHTML(s.qt_btns,10);document.getElementById('stats-sms-cats').innerHTML=makeBarsHTML(s.sms_cats);const vbEl=document.getElementById('stats-vetting-buttons');if(vbEl){const vb=s.vetting_buttons||{};const BTN_COLORS={'Swapped':'','Startkey Issued':'blue','Failed Vetting':'red','Barred':'red','Menu Updated':'blue','Failed Name':'amber','Failed ID':'amber','Failed YOB':'amber','Purged':'purple','Custom Note':'teal'};if(Object.keys(vb).length){const sorted=Object.entries(vb).sort((a,b)=>b[1]-a[1]);const total=sorted.reduce((a,b)=>a+b[1],0);const max=sorted[0][1]||1;vbEl.innerHTML=sorted.map(([k,v])=>{const pct=Math.round((v/total)*100);const w=Math.round((v/max)*100);const cls=BTN_COLORS[k]!==undefined?BTN_COLORS[k]:'';return`<div class="stat-bar-row"><span class="stat-bar-label" title="${k}">${k}</span><div class="stat-bar-track"><div class="stat-bar-fill ${cls}" style="width:${w}%"></div></div><span class="stat-bar-val">${v}</span><span class="stat-bar-pct">${pct}%</span></div>`;}).join('');}else{vbEl.innerHTML='<div class="stat-empty">No status buttons used yet</div>';}}}
 
 /* TABS */
 function switchTab(tab){document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));document.getElementById('tab-'+tab).classList.add('active');document.getElementById('panel-'+tab).classList.add('active');const labels={vetting:'Vetting System',quicktexts:'Quick Texts',break:'Break Notifier',stats:'Analytics'};document.getElementById('crumb-label').textContent=labels[tab]||tab;if(tab==='stats')renderStats();}
@@ -950,9 +971,42 @@ function switchVettingMode(mode){currentVettingMode=mode;['individual','till'].f
 
 /* INDIVIDUAL VETTING */
 let startkeyIssued=false,failedVetting=0,swapped=false,customNoteActive=false,customNoteText='';
-let flags={barred:false,menu:false,yob:false,purged:false};
-const flagTexts={barred:'Suspended and Barred - Advised to visit RC for assistance',menu:'Menu Updated',yob:'Failed YOB to Visit RC',purged:'MNRF-True Purged and advised customer to perfom Location update'};
-function toggleFlag(key){flags[key]=!flags[key];document.getElementById(key+'-btn').classList.toggle('active',flags[key]);if(key==='yob'){const row=document.getElementById('yob-input-row');row.style.display=flags[key]?'flex':'none';if(!flags[key]){document.getElementById('yob-input').value='';}}if(flags[key])statsBumpVettingButton(key==='barred'?'Barred':key==='menu'?'Menu Updated':key==='yob'?'Failed YOB':'Purged');updateTextArea();showToast(flags[key]?key.toUpperCase()+' status set':key.toUpperCase()+' status removed');}
+let flags={barred:false,menu:false,purged:false};
+const flagTexts={barred:'Suspended and Barred - Advised to visit RC for assistance',menu:'Menu Updated',purged:'MNRF-True Purged and advised customer to perfom Location update'};
+let primaryFailType=null; /* null | 'name' | 'id' | 'yob' */
+function toggleFlag(key){flags[key]=!flags[key];document.getElementById(key+'-btn').classList.toggle('active',flags[key]);if(flags[key])statsBumpVettingButton(key==='barred'?'Barred':key==='menu'?'Menu Updated':'Purged');updateTextArea();showToast(flags[key]?key.toUpperCase()+' status set':key.toUpperCase()+' status removed');}
+function toggleFailedPrimary(){
+  if(primaryFailType){
+    resetPrimaryFail();
+  } else {
+    document.getElementById('primary-menu-row').style.display='flex';
+  }
+}
+function selectPrimaryFail(type){
+  primaryFailType=type;
+  document.getElementById('primary-menu-row').style.display='none';
+  document.getElementById('id-input-row').style.display = (type==='id') ? 'flex' : 'none';
+  document.getElementById('yob-input-row').style.display = (type==='yob') ? 'flex' : 'none';
+  document.getElementById('primary-btn').classList.add('active');
+  if(type==='name'){
+    const el=document.getElementById('360');
+    if(el)el.value='';
+  }
+  statsBumpVettingButton(type==='name'?'Failed Name':type==='id'?'Failed ID':'Failed YOB');
+  updateTextArea();
+  showToast(type==='name'?'Failed Name set':type==='id'?'Failed ID set':'Failed YOB set');
+}
+function resetPrimaryFail(){
+  primaryFailType=null;
+  document.getElementById('primary-menu-row').style.display='none';
+  document.getElementById('id-input-row').style.display='none';
+  document.getElementById('id-input').value='';
+  document.getElementById('yob-input-row').style.display='none';
+  document.getElementById('yob-input').value='';
+  document.getElementById('primary-btn').classList.remove('active');
+  updateTextArea();
+  showToast('Failed Primary removed');
+}
 function setSwapped(){swapped=!swapped;document.getElementById('swapped-btn').classList.toggle('active',swapped);if(swapped)statsBumpVettingButton('Swapped');updateTextArea();showToast(swapped?'Swapped status set':'Swapped status removed');}
 function setStartkeyIssued(){startkeyIssued=!startkeyIssued;document.getElementById('startkey-issued-btn').classList.toggle('active',startkeyIssued);if(startkeyIssued)statsBumpVettingButton('Startkey Issued');updateTextArea();showToast(startkeyIssued?'Startkey Issued marked':'Startkey Issued removed');}
 let _fvLastClick=0;
@@ -982,19 +1036,24 @@ function updateTextArea(){
   if(swapped){lines.push('✔ Line swapped and advised on M-pesa activation ✔');lines.push('');}
   if(startkeyIssued){lines.push('✔ Startkey Issued and advised on reset ✔');lines.push('');}
   Object.entries(flags).forEach(([key,active])=>{if(active){lines.push(flagTexts[key]);lines.push('');}});
+  if(primaryFailType==='name'){lines.push('Failed Names - Advised to visit RC');lines.push('');}
+  else if(primaryFailType==='id'){lines.push('Failed ID number - Advised to visit RC');lines.push('');}
+  else if(primaryFailType==='yob'){lines.push('Failed YOB to Visit RC');lines.push('');}
   const calling=document.getElementById('calling').value.trim();
   const msisdn=document.getElementById('msisdn').value.trim();
   if(calling)lines.push('Calling Number: '+calling);
   if(msisdn)lines.push('MSISDN: '+msisdn);
   if(calling||msisdn)lines.push('');
   if(name)lines.push('Full Name: '+name);
-  if(id)lines.push('ID: '+id);
+  const statedId=(primaryFailType==='id')?(document.getElementById('id-input')?.value.trim()||''):'';
+  const idToShow=statedId||id;
+  if(idToShow)lines.push('ID: '+idToShow+(statedId?' - Failed':''));
   if(dob){
-    const statedYob=flags.yob?(document.getElementById('yob-input')?.value.trim()||''):'' ;
+    const statedYob=(primaryFailType==='yob')?(document.getElementById('yob-input')?.value.trim()||''):'';
     if(statedYob){lines.push('Y.O.B: '+statedYob+' - Failed');}
-    else{lines.push('Y.O.B: '+dob+(flags.yob?' - Failed':''));}
+    else{lines.push('Y.O.B: '+dob+(primaryFailType==='yob'?' - Failed':''));}
   }
-  if(name||id||dob)lines.push('');
+  if(name||idToShow||dob)lines.push('');
   const fieldMap={'mpesa':'M-Pesa Balance','airtime':'Airtime Balance','fuliza':'Fuliza Limit','mshwari':'M-Shwari Limit','fdn1':'FDN1','fdn2':'FDN2','regdate':'Registration Date','mpesa-trans1':'MPESA Transaction 1','mpesa-trans2':'MPESA Transaction 2','kcb':'KCB M-Pesa Limit','storo':'Storo Bonus','bundle':'Last Bundle Purchase'};
   let filledCount=0;
   Object.entries(fieldMap).forEach(([field,label])=>{let val=document.getElementById(field)?.value.trim();if(val){if(!/(?: - |^)(Passed|Failed)$/.test(val))val=val+' - Passed';lines.push(label+': '+val);filledCount++;}});
@@ -1023,14 +1082,14 @@ function pasteAny(id){navigator.clipboard.readText().then(text=>{document.getEle
 
 /* HISTORY NAV */
 let vettingHistory=[],vettingHistoryIdx=-1,liveFormSnapshot=null,autoClearTimer=null,autoClearCountdown=null;
-function captureFormState(){const fields={};['msisdn','360','calling','mpesa','airtime','fuliza','mshwari','fdn1','fdn2','regdate','mpesa-trans1','mpesa-trans2','kcb','storo','bundle'].forEach(id=>{const el=document.getElementById(id);if(el)fields[id]=el.value;});fields['_serialDigits']=_serialDigits;return{fields,swapped,startkeyIssued,failedVetting,customNoteActive,customNoteText,flags:{...flags}};}
-function restoreFormState(state){Object.entries(state.fields).forEach(([id,val])=>{if(id==='_serialDigits'){_serialDigits=val||'';const inp=document.getElementById('serial-number');if(inp)inp.value=_serialDigits?_maskRender(_serialDigits):'';}else{const el=document.getElementById(id);if(el)el.value=val;}});swapped=state.swapped;startkeyIssued=state.startkeyIssued;failedVetting=state.failedVetting;flags={...state.flags};customNoteActive=state.customNoteActive||false;customNoteText=state.customNoteText||'';document.getElementById('custom-text-input').value=customNoteText;document.getElementById('custom-input-row').style.display='none';document.getElementById('custom-btn').classList.toggle('active',customNoteActive);document.getElementById('swapped-btn').classList.toggle('active',swapped);document.getElementById('startkey-issued-btn').classList.toggle('active',startkeyIssued);document.getElementById('failed-btn').classList.toggle('active',failedVetting>0);document.getElementById('failed-count').textContent=failedVetting===2?'×2':'';['barred','menu','yob','purged'].forEach(k=>document.getElementById(k+'-btn').classList.toggle('active',flags[k]));updateValidationDots();}
+function captureFormState(){const fields={};['msisdn','360','calling','mpesa','airtime','fuliza','mshwari','fdn1','fdn2','regdate','mpesa-trans1','mpesa-trans2','kcb','storo','bundle'].forEach(id=>{const el=document.getElementById(id);if(el)fields[id]=el.value;});fields['_serialDigits']=_serialDigits;return{fields,swapped,startkeyIssued,failedVetting,customNoteActive,customNoteText,flags:{...flags},primaryFailType,idInputVal:document.getElementById('id-input')?.value||'',yobInputVal:document.getElementById('yob-input')?.value||''};}
+function restoreFormState(state){Object.entries(state.fields).forEach(([id,val])=>{if(id==='_serialDigits'){_serialDigits=val||'';const inp=document.getElementById('serial-number');if(inp)inp.value=_serialDigits?_maskRender(_serialDigits):'';}else{const el=document.getElementById(id);if(el)el.value=val;}});swapped=state.swapped;startkeyIssued=state.startkeyIssued;failedVetting=state.failedVetting;flags={...state.flags};customNoteActive=state.customNoteActive||false;customNoteText=state.customNoteText||'';document.getElementById('custom-text-input').value=customNoteText;document.getElementById('custom-input-row').style.display='none';document.getElementById('custom-btn').classList.toggle('active',customNoteActive);document.getElementById('swapped-btn').classList.toggle('active',swapped);document.getElementById('startkey-issued-btn').classList.toggle('active',startkeyIssued);document.getElementById('failed-btn').classList.toggle('active',failedVetting>0);document.getElementById('failed-count').textContent=failedVetting===2?'×2':'';['barred','menu','purged'].forEach(k=>document.getElementById(k+'-btn').classList.toggle('active',flags[k]));primaryFailType=state.primaryFailType||null;document.getElementById('primary-btn').classList.toggle('active',!!primaryFailType);document.getElementById('primary-menu-row').style.display='none';document.getElementById('id-input-row').style.display=primaryFailType==='id'?'flex':'none';document.getElementById('id-input').value=state.idInputVal||'';document.getElementById('yob-input-row').style.display=primaryFailType==='yob'?'flex':'none';document.getElementById('yob-input').value=state.yobInputVal||'';updateValidationDots();}
 function vettingUpdateNavButtons(){const prev=document.getElementById('btn-prev'),next=document.getElementById('btn-next'),counter=document.getElementById('summary-counter'),total=vettingHistory.length;if(total===0){prev.disabled=true;next.disabled=true;counter.textContent='— / —';return;}counter.textContent=vettingHistoryIdx===-1?'Live / '+total:(vettingHistoryIdx+1)+' / '+total;prev.disabled=vettingHistoryIdx===0;next.disabled=vettingHistoryIdx===-1;}
 function vettingNavPrev(){if(vettingHistory.length===0)return;if(vettingHistoryIdx===-1){liveFormSnapshot=captureFormState();vettingHistoryIdx=vettingHistory.length-1;}else if(vettingHistoryIdx>0){vettingHistoryIdx--;}else return;const entry=vettingHistory[vettingHistoryIdx];restoreFormState(entry.formState);const ta=document.getElementById('answer-area');ta.value=entry.summary;ta.removeAttribute('readonly');ta.classList.add('history-mode');document.getElementById('summary-subtitle').textContent='Snapshot '+(vettingHistoryIdx+1)+' of '+vettingHistory.length+' — click Refresh to regenerate';vettingUpdateNavButtons();showToast('Viewing snapshot '+(vettingHistoryIdx+1)+' of '+vettingHistory.length);}
 function vettingNavNext(){if(vettingHistoryIdx===-1)return;if(vettingHistoryIdx<vettingHistory.length-1){vettingHistoryIdx++;const entry=vettingHistory[vettingHistoryIdx];restoreFormState(entry.formState);const ta=document.getElementById('answer-area');ta.value=entry.summary;ta.removeAttribute('readonly');ta.classList.add('history-mode');document.getElementById('summary-subtitle').textContent='Snapshot '+(vettingHistoryIdx+1)+' of '+vettingHistory.length;showToast('Viewing snapshot '+(vettingHistoryIdx+1));}else{vettingHistoryIdx=-1;const ta=document.getElementById('answer-area');ta.setAttribute('readonly','');ta.classList.remove('history-mode');document.getElementById('summary-subtitle').textContent='Auto-generated output · updates as you type';if(liveFormSnapshot){restoreFormState(liveFormSnapshot);liveFormSnapshot=null;}updateTextArea();showToast('Back to live form');}vettingUpdateNavButtons();}
 function startAutoClear(){if(autoClearTimer)clearTimeout(autoClearTimer);if(autoClearCountdown)clearInterval(autoClearCountdown);const bar=document.getElementById('auto-clear-bar'),msg=document.getElementById('auto-clear-msg');bar.style.display='flex';let secs=15;msg.textContent='Summary saved · Form clears in '+secs+'s';autoClearCountdown=setInterval(()=>{secs--;if(secs>0)msg.textContent='Summary saved · Form clears in '+secs+'s';},1000);autoClearTimer=setTimeout(()=>{clearInterval(autoClearCountdown);bar.style.display='none';doResetVettingForm();showToast('Form cleared — summary saved in history');},15000);}
 function copyTextArea(){if(vettingHistoryIdx!==-1){const val=document.getElementById('answer-area').value;if(!val.trim())return showToast('Nothing to copy');navigator.clipboard.writeText(val).then(()=>{const btn=document.getElementById('copy-btn');btn.textContent='✓ Copied!';setTimeout(()=>btn.textContent='Copy Output',2000);showToast('Summary copied!');});return;}const val=document.getElementById('answer-area').value;if(!val.trim())return showToast('Nothing to copy yet');navigator.clipboard.writeText(val).then(()=>{const btn=document.getElementById('copy-btn');btn.textContent='✓ Copied!';setTimeout(()=>btn.textContent='Copy Output',2000);vettingHistory.push({summary:val,formState:captureFormState()});if(vettingHistory.length>3)vettingHistory.shift();vettingHistoryIdx=-1;liveFormSnapshot=null;vettingUpdateNavButtons();statsBumpVetting();showToast('Summary copied & saved!');startAutoClear();}).catch(()=>showToast('⚠ Copy failed'));}
-function doResetVettingForm(){document.querySelectorAll('#vpanel-individual input').forEach(el=>el.value='');_serialDigits='89254021';const sinp=document.getElementById('serial-number');if(sinp)sinp.value=_maskRender(_serialDigits);swapped=false;startkeyIssued=false;failedVetting=0;const _fc=document.getElementById('failed-count');if(_fc)_fc.textContent='';customNoteActive=false;customNoteText='';document.getElementById('custom-text-input').value='';document.getElementById('custom-input-row').style.display='none';document.getElementById('custom-btn').classList.remove('active');flags={barred:false,menu:false,yob:false,purged:false};document.getElementById('yob-input-row').style.display='none';document.getElementById('yob-input').value='';['swapped-btn','startkey-issued-btn','failed-btn'].forEach(id=>document.getElementById(id).classList.remove('active'));['barred','menu','yob','purged'].forEach(k=>document.getElementById(k+'-btn').classList.remove('active'));const ta=document.getElementById('answer-area');ta.setAttribute('readonly','');ta.classList.remove('history-mode');updateValidationDots();updateTextArea();}
+function doResetVettingForm(){document.querySelectorAll('#vpanel-individual input').forEach(el=>el.value='');_serialDigits='89254021';const sinp=document.getElementById('serial-number');if(sinp)sinp.value=_maskRender(_serialDigits);swapped=false;startkeyIssued=false;failedVetting=0;const _fc=document.getElementById('failed-count');if(_fc)_fc.textContent='';customNoteActive=false;customNoteText='';document.getElementById('custom-text-input').value='';document.getElementById('custom-input-row').style.display='none';document.getElementById('custom-btn').classList.remove('active');flags={barred:false,menu:false,purged:false};primaryFailType=null;document.getElementById('primary-menu-row').style.display='none';document.getElementById('id-input-row').style.display='none';document.getElementById('id-input').value='';document.getElementById('yob-input-row').style.display='none';document.getElementById('yob-input').value='';['swapped-btn','startkey-issued-btn','failed-btn','primary-btn'].forEach(id=>document.getElementById(id).classList.remove('active'));['barred','menu','purged'].forEach(k=>document.getElementById(k+'-btn').classList.remove('active'));const ta=document.getElementById('answer-area');ta.setAttribute('readonly','');ta.classList.remove('history-mode');updateValidationDots();updateTextArea();}
 document.querySelectorAll('#vpanel-individual input').forEach(input=>{input.addEventListener('input',()=>{updateTextArea();if(input.id==='calling'||input.id.includes('fdn'))updateValidationDot(input);});});
 updateTextArea();updateValidationDots();vettingUpdateNavButtons();
 

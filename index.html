@@ -6,16 +6,16 @@
 <title>Safaricom Care — Agent Tools</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--green:#3ab54a;--green-dark:#007a0c;--green-light:#E8F7EE;--green-mid:#C8EDD9;--red:#E3001B;--red-light:#FFF0F0;--red-mid:#FFCCCC;--amber:#F59E0B;--amber-light:#FFFBEB;--grey-50:#F7F9F8;--grey-100:#EEF2F0;--grey-200:#D6DDD9;--grey-400:#8FA898;--grey-700:#3A4A40;--grey-900:#1A2920;--shadow-md:0 4px 16px rgba(0,0,0,.10);--radius:8px;--radius-lg:14px;}
+:root{--green:#2cb34a;--green-dark:#007a0c;--green-light:#E8F7EE;--green-mid:#C8EDD9;--red:#E3001B;--red-light:#FFF0F0;--red-mid:#FFCCCC;--amber:#F59E0B;--amber-light:#FFFBEB;--grey-50:#F7F9F8;--grey-100:#EEF2F0;--grey-200:#D6DDD9;--grey-400:#8FA898;--grey-700:#3A4A40;--grey-900:#1A2920;--shadow-md:0 4px 16px rgba(0,0,0,.10);--radius:8px;--radius-lg:14px;}
 *{box-sizing:border-box;margin:0;padding:0;}
 body{font-family:'Inter',sans-serif;background:var(--grey-50);color:var(--grey-900);min-height:100vh;}
-.topbar{background:var(--green-dark);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 28px;height:56px;box-shadow:0 2px 8px rgba(0,0,0,.18);}
+.topbar{background:var(--green);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 28px;height:56px;box-shadow:0 2px 8px rgba(0,0,0,.18);}
 .topbar-logo{display:flex;align-items:center;gap:12px;}
 .logo-icon{height:28px;display:flex;align-items:center;justify-content:center;}
 .logo-icon svg{width:22px;height:22px;}
 .logo-icon img{height:100%;width:auto;display:block;}
 .topbar-divider{width:1.5px;height:20px;background:rgba(255,255,255,.45);flex-shrink:0;}
-.topbar-appname{-webkit-font-smoothing:antialiased;-webkit-text-size-adjust:100%;--AppBar-background:#3ab54a;--AppBar-color:#fff;color:var(--AppBar-color);--Paper-shadow:0 0 1px 0 rgba(0,0,0,0.31), 0 3px 4px -2px rgba(0,0,0,0.25);box-sizing:inherit;font-weight:400;line-height:1.5;font-family:'SafFont','SafFont Fallback';font-size:16px;margin:0;margin-left:8px;letter-spacing:.6px;text-transform:uppercase;white-space:nowrap;}
+.topbar-appname{-webkit-font-smoothing:antialiased;-webkit-text-size-adjust:100%;--AppBar-background:#2cb34a;--AppBar-color:#fff;color:var(--AppBar-color);--Paper-shadow:0 0 1px 0 rgba(0,0,0,0.31), 0 3px 4px -2px rgba(0,0,0,0.25);box-sizing:inherit;font-weight:400;line-height:1.5;font-family:'SafFont','SafFont Fallback';font-size:16px;margin:0;margin-left:8px;letter-spacing:.6px;text-transform:uppercase;white-space:nowrap;}
 .logo-text{font-size:18px;font-weight:700;color:#fff;}
 .logo-text span{color:#7DEBB0;font-weight:400;font-size:13px;display:block;line-height:1;}
 .topbar-badge{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25);color:#fff;padding:4px 12px;border-radius:20px;font-size:12px;font-weight:600;letter-spacing:.6px;}
@@ -35,8 +35,8 @@ body{font-family:'Inter',sans-serif;background:var(--grey-50);color:var(--grey-9
 .tab-breadcrumb-dot{width:4px;height:4px;background:rgba(255,255,255,.4);border-radius:50%;}
 .tab-panel{display:none;}
 .tab-panel.active{display:block;}
-.page-wrap{padding:24px 28px;max-width:1320px;margin:0 auto;}
-.main-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start;}
+.page-wrap{padding:24px 28px;max-width:1440px;margin:0 auto;}
+.main-grid{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:24px;align-items:start;}
 .card{background:#fff;border-radius:var(--radius-lg);box-shadow:var(--shadow-md);overflow:hidden;}
 .card-header{background:linear-gradient(135deg,var(--green-dark) 0%,var(--green) 100%);padding:16px 20px;display:flex;align-items:center;gap:10px;}
 .card-header-icon{width:32px;height:32px;background:rgba(255,255,255,.2);border-radius:8px;display:flex;align-items:center;justify-content:center;}
@@ -61,7 +61,7 @@ body{font-family:'Inter',sans-serif;background:var(--grey-50);color:var(--grey-9
 .status-btn svg{width:13px;height:13px;stroke:currentColor;fill:none;stroke-width:2.5;flex-shrink:0;}
 .status-count{font-size:11px;font-weight:800;margin-left:3px;letter-spacing:.3px;}
 .btn-swapped{border-color:var(--green-mid);background:var(--green-light);color:var(--green-dark);}
-.btn-swapped:hover,.btn-swapped.active{background:var(--green);border-color:var(--green);color:#fff;box-shadow:0 3px 10px rgba(0,166,81,.3);}
+.btn-swapped:hover,.btn-swapped.active{background:var(--green);border-color:var(--green);color:#fff;box-shadow:0 3px 10px rgba(44,179,74,.3);}
 .btn-startkey{border-color:#BFE3FF;background:#EBF6FF;color:#0066CC;}
 .btn-startkey:hover,.btn-startkey.active{background:#0066CC;border-color:#0066CC;color:#fff;box-shadow:0 3px 10px rgba(0,102,204,.3);}
 .btn-failed{border-color:var(--red-mid);background:var(--red-light);color:var(--red);}
@@ -104,6 +104,18 @@ input::placeholder{color:var(--grey-400);font-size:11.5px;}
 .btn-xs-amber:hover{background:var(--amber);color:#fff;border-color:var(--amber);}
 .btn-xs-slate{border-color:#CBD5E1;color:#475569;background:#F1F5F9;}
 .btn-xs-slate:hover{background:#64748B;color:#fff;border-color:#64748B;}
+/* SECONDARY VETTING DUAL-COLUMN GRID */
+.secondary-grid{display:grid;grid-template-columns:1fr 1fr;column-gap:16px;align-items:start;}
+.secondary-col{min-width:0;}
+.secondary-col .form-label{min-width:96px;font-size:10.5px;}
+.secondary-col .btn-xs{padding:4px 6px;font-size:10px;letter-spacing:0;}
+.secondary-col input[type="text"]{font-size:12px;padding:4px 4px;}
+.secondary-col .form-row{gap:5px;}
+body.single-col .secondary-grid{grid-template-columns:1fr;}
+body.single-col .secondary-col .form-label{min-width:120px;font-size:11.5px;}
+body.single-col .secondary-col .btn-xs{padding:5px 9px;font-size:11px;}
+body.single-col .page-wrap{max-width:1320px;}
+body.single-col .main-grid{grid-template-columns:1fr 1fr;}
 /* MASKED INPUT STYLE */
 .masked-input{font-family:'Courier New',monospace !important;letter-spacing:2px !important;font-size:12px !important;}
 .answer-toolbar{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;gap:8px;}
@@ -111,7 +123,7 @@ input::placeholder{color:var(--grey-400);font-size:11.5px;}
 #answer-area,#till-answer-area,#qt-answer-area,#sms-answer-area,#paybill-answer-area{width:100%;border:1.5px solid var(--grey-200);border-radius:var(--radius);padding:14px;font-family:'Inter',monospace;font-size:13px;color:var(--grey-900);background:var(--grey-50);resize:vertical;outline:none;line-height:1.7;transition:border-color .2s;}
 #answer-area,#till-answer-area{min-height:520px;}
 #qt-answer-area,#sms-answer-area,#paybill-answer-area{min-height:420px;}
-#answer-area:focus,#till-answer-area:focus,#qt-answer-area:focus{border-color:var(--green);box-shadow:0 0 0 3px rgba(0,166,81,.1);}
+#answer-area:focus,#till-answer-area:focus,#qt-answer-area:focus{border-color:var(--green);box-shadow:0 0 0 3px rgba(44,179,74,.1);}
 #answer-area.history-mode{border-color:#0066CC;background:#F0F7FF;box-shadow:0 0 0 3px rgba(0,102,204,.08);}
 .btn-outline{background:transparent;border:1.5px solid var(--grey-200);color:var(--grey-700);border-radius:var(--radius);padding:7px 14px;font-size:12px;font-weight:600;cursor:pointer;font-family:'Inter',sans-serif;transition:all .15s;display:flex;align-items:center;gap:6px;}
 .btn-outline:hover{border-color:var(--green);color:var(--green);background:var(--green-light);}
@@ -130,7 +142,7 @@ input::placeholder{color:var(--grey-400);font-size:11.5px;}
 .txn-label{font-size:11px;font-weight:600;color:var(--green-dark);text-transform:uppercase;letter-spacing:.7px;margin-bottom:8px;}
 .txn-row{display:flex;gap:8px;align-items:center;}
 #txn-code,#sms-txn-code{flex:1;border:1.5px solid var(--grey-200);border-radius:var(--radius);padding:9px 13px;font-family:'Inter',sans-serif;font-size:13px;font-weight:600;color:var(--grey-900);background:#fff;outline:none;transition:border-color .2s;text-transform:uppercase;letter-spacing:.5px;}
-#txn-code:focus,#sms-txn-code:focus{border-color:var(--green);box-shadow:0 0 0 3px rgba(0,166,81,.12);}
+#txn-code:focus,#sms-txn-code:focus{border-color:var(--green);box-shadow:0 0 0 3px rgba(44,179,74,.12);}
 #txn-code::placeholder,#sms-txn-code::placeholder{color:var(--grey-400);font-weight:400;letter-spacing:0;text-transform:none;}
 @keyframes txnShake{0%,100%{transform:translateX(0)}15%{transform:translateX(-6px)}30%{transform:translateX(6px)}45%{transform:translateX(-5px)}60%{transform:translateX(5px)}75%{transform:translateX(-3px)}90%{transform:translateX(3px)}}
 #txn-code.txn-required{border-color:var(--red)!important;box-shadow:0 0 0 3px rgba(227,0,27,.18)!important;background:var(--red-light)!important;animation:txnShake .45s ease;}
@@ -142,7 +154,7 @@ input::placeholder{color:var(--grey-400);font-size:11.5px;}
 .section-label{font-size:11px;font-weight:700;color:var(--grey-400);text-transform:uppercase;letter-spacing:.8px;margin-bottom:10px;}
 .btn-grid{display:flex;flex-wrap:wrap;gap:7px;}
 .quick-copy-btn{background:#fff;color:var(--green-dark);border:1.5px solid var(--green-mid);border-radius:20px;padding:7px 14px;font-size:12px;font-weight:600;cursor:pointer;font-family:'Inter',sans-serif;transition:all .15s;white-space:nowrap;letter-spacing:.3px;}
-.quick-copy-btn:hover{background:var(--green);color:#fff;border-color:var(--green);box-shadow:0 2px 8px rgba(0,166,81,.25);transform:translateY(-1px);}
+.quick-copy-btn:hover{background:var(--green);color:#fff;border-color:var(--green);box-shadow:0 2px 8px rgba(44,179,74,.25);transform:translateY(-1px);}
 .quick-copy-btn:active{transform:scale(.97);}
 .quick-copy-btn.copied{background:var(--green-dark);color:#fff;border-color:var(--green-dark);}
 @keyframes popIn{0%{transform:scale(.95)}60%{transform:scale(1.05)}100%{transform:scale(1)}}
@@ -155,12 +167,12 @@ input::placeholder{color:var(--grey-400);font-size:11.5px;}
 .time-group{display:flex;align-items:center;gap:6px;}
 .time-sep{font-size:16px;font-weight:700;color:var(--grey-400);}
 .time-input-box{width:56px;border:1.5px solid var(--grey-200);border-radius:var(--radius);padding:7px 8px;font-family:'Inter',sans-serif;font-size:14px;font-weight:700;color:var(--grey-900);background:var(--grey-50);outline:none;text-align:center;transition:border-color .2s,box-shadow .2s;}
-.time-input-box:focus{border-color:var(--green);box-shadow:0 0 0 3px rgba(0,166,81,.12);background:#fff;}
+.time-input-box:focus{border-color:var(--green);box-shadow:0 0 0 3px rgba(44,179,74,.12);background:#fff;}
 .time-input-box::placeholder{color:var(--grey-400);font-weight:400;font-size:12px;}
 .countdown-wrapper{display:flex;flex-direction:column;align-items:center;gap:10px;padding:20px 0;}
 .countdown-label{font-size:11px;font-weight:700;color:var(--grey-400);text-transform:uppercase;letter-spacing:.8px;}
 .countdown-event-name{font-size:18px;font-weight:700;color:var(--green-dark);text-align:center;min-height:28px;}
-.countdown-clock{font-size:48px;font-weight:700;color:var(--green);letter-spacing:4px;background:var(--green-light);border:2px solid var(--green-mid);border-radius:var(--radius-lg);padding:24px 32px;text-align:center;min-width:280px;box-shadow:0 4px 20px rgba(0,166,81,.12);font-variant-numeric:tabular-nums;transition:color .3s;}
+.countdown-clock{font-size:48px;font-weight:700;color:var(--green);letter-spacing:4px;background:var(--green-light);border:2px solid var(--green-mid);border-radius:var(--radius-lg);padding:24px 32px;text-align:center;min-width:280px;box-shadow:0 4px 20px rgba(44,179,74,.12);font-variant-numeric:tabular-nums;transition:color .3s;}
 .countdown-clock.urgent{color:var(--red);border-color:var(--red-mid);background:var(--red-light);animation:pulse 1s infinite;}
 @keyframes pulse{0%,100%{box-shadow:0 4px 20px rgba(227,0,27,.15)}50%{box-shadow:0 4px 30px rgba(227,0,27,.35)}}
 .events-list{width:100%;margin-top:16px;}
@@ -221,8 +233,12 @@ input::placeholder{color:var(--grey-400);font-size:11.5px;}
 ::-webkit-scrollbar{width:6px;}
 ::-webkit-scrollbar-track{background:var(--grey-100);}
 ::-webkit-scrollbar-thumb{background:var(--green-mid);border-radius:10px;}
+@media(max-width:1200px){
+.secondary-grid{grid-template-columns:1fr;}
+}
 @media(max-width:900px){
 .main-grid,.stats-main-grid{grid-template-columns:1fr;}
+.secondary-grid{grid-template-columns:1fr;}
 .page-wrap{padding:16px;}
 .topbar,.tab-nav{padding:0 16px;}
 .form-label{min-width:110px;}
@@ -269,7 +285,7 @@ body.dark-mode{
 }
 body.dark-mode .card{background:var(--grey-100);}
 body.dark-mode .topbar{background:#0a2412;}
-body.dark-mode .tab-nav{background:#0f321a;}
+body.dark-mode .tab-nav{background:#0a2412;}
 body.dark-mode .tab-btn.active{background:var(--grey-50);color:var(--green);}
 body.dark-mode .tab-btn.active svg{stroke:var(--green);}
 body.dark-mode .tab-btn{color:rgba(255,255,255,.75);}
@@ -371,6 +387,13 @@ body.dark-mode .btn-flag-purged.active,body.dark-mode .btn-flag-purged:hover{bac
     <div class="topbar-appname">CEE TOOL - MADE BY SAGGAF</div>
   </div>
   <div style="display:flex;align-items:center;gap:10px;">
+    <div class="dm-toggle" onclick="toggleLayoutMode()" title="Toggle secondary vetting layout: dual / single column">
+      <span class="dm-icon" id="layout-icon">&#9638;</span>
+      <div class="dm-toggle-track" id="layout-track">
+        <div class="dm-toggle-thumb"></div>
+      </div>
+      <span class="dm-toggle-label" id="layout-label">2-Col</span>
+    </div>
     <div class="dm-toggle" onclick="toggleDarkMode()" title="Toggle dark mode">
       <span class="dm-icon" id="dm-icon">🌙</span>
       <div class="dm-toggle-track" id="dm-track">
@@ -450,18 +473,24 @@ body.dark-mode .btn-flag-purged.active,body.dark-mode .btn-flag-purged:hover{bac
     <div class="form-row"><span class="form-label">360</span><input type="text" id="360" placeholder="Paste block → Name, ID, DOB auto-filled"><button type="button" class="btn-xs btn-xs-green" onclick="paste360()">PASTE</button></div>
     <div class="form-row"><span class="form-label">Calling Number</span><input type="tel" id="calling" maxlength="9" placeholder="e.g. 712345678" oninput="restrictNumberInput(this)"><span class="validation-dot"></span><button type="button" class="btn-xs btn-xs-green" onclick="pasteNumber('calling')">PASTE</button></div>
     <div class="section-divider" style="margin-top:12px;"><div class="section-divider-label svl-accent">Secondary Vetting</div><div class="section-divider-line"></div><button type="button" class="btn-xs btn-xs-slate" onclick="clearAllSecondary()">Clear Secondary</button></div>
+    <div class="secondary-grid">
+      <div class="secondary-col">
     <div class="form-row"><span class="form-label form-label-sm">M-Pesa Balance</span><input type="text" id="mpesa"><button type="button" class="btn-xs btn-xs-red" onclick="setFail('mpesa')">FAIL</button><button type="button" class="btn-xs btn-xs-slate" onclick="clearField('mpesa')">CLEAR</button></div>
     <div class="form-row"><span class="form-label form-label-sm">Airtime Balance</span><input type="text" id="airtime"><button type="button" class="btn-xs btn-xs-red" onclick="setFail('airtime')">FAIL</button><button type="button" class="btn-xs btn-xs-slate" onclick="clearField('airtime')">CLEAR</button></div>
     <div class="form-row"><span class="form-label form-label-sm">Fuliza Limit</span><input type="text" id="fuliza"><button type="button" class="btn-xs btn-xs-red" onclick="setFail('fuliza')">FAIL</button><button type="button" class="btn-xs btn-xs-slate" onclick="clearField('fuliza')">CLEAR</button></div>
     <div class="form-row"><span class="form-label form-label-sm">M-Shwari Limit</span><input type="text" id="mshwari"><button type="button" class="btn-xs btn-xs-red" onclick="setFail('mshwari')">FAIL</button><button type="button" class="btn-xs btn-xs-slate" onclick="clearField('mshwari')">CLEAR</button></div>
+    <div class="form-row"><span class="form-label form-label-sm">KCB M-Pesa Limit</span><input type="text" id="kcb"><button type="button" class="btn-xs btn-xs-red" onclick="setFail('kcb')">FAIL</button><button type="button" class="btn-xs btn-xs-slate" onclick="clearField('kcb')">CLEAR</button></div>
+    <div class="form-row"><span class="form-label form-label-sm">Storo Bonus</span><input type="text" id="storo"><button type="button" class="btn-xs btn-xs-red" onclick="setFail('storo')">FAIL</button><button type="button" class="btn-xs btn-xs-slate" onclick="clearField('storo')">CLEAR</button></div>
+      </div>
+      <div class="secondary-col">
     <div class="form-row"><span class="form-label form-label-sm">FDN1</span><input type="text" id="fdn1" placeholder="e.g. 0712345678" oninput="cleanFDN(this)"><span class="validation-dot"></span><button type="button" class="btn-xs btn-xs-green" onclick="pasteNumber('fdn1',false)">PASTE</button><button type="button" class="btn-xs btn-xs-red" onclick="setFail('fdn1')">FAIL</button><button type="button" class="btn-xs btn-xs-slate" onclick="clearField('fdn1')">CLEAR</button></div>
     <div class="form-row"><span class="form-label form-label-sm">FDN2</span><input type="text" id="fdn2" placeholder="e.g. 0712345678" oninput="cleanFDN(this)"><span class="validation-dot"></span><button type="button" class="btn-xs btn-xs-green" onclick="pasteNumber('fdn2',false)">PASTE</button><button type="button" class="btn-xs btn-xs-red" onclick="setFail('fdn2')">FAIL</button><button type="button" class="btn-xs btn-xs-slate" onclick="clearField('fdn2')">CLEAR</button></div>
     <div class="form-row"><span class="form-label form-label-sm">Registration Date</span><input type="text" id="regdate"><button type="button" class="btn-xs btn-xs-red" onclick="setFail('regdate')">FAIL</button><button type="button" class="btn-xs btn-xs-slate" onclick="clearField('regdate')">CLEAR</button></div>
     <div class="form-row"><span class="form-label form-label-sm">MPESA Transaction 1</span><input type="text" id="mpesa-trans1"><button type="button" class="btn-xs btn-xs-green" onclick="pasteAny('mpesa-trans1')">PASTE</button><button type="button" class="btn-xs btn-xs-red" onclick="setFail('mpesa-trans1')">FAIL</button><button type="button" class="btn-xs btn-xs-slate" onclick="clearField('mpesa-trans1')">CLEAR</button></div>
     <div class="form-row"><span class="form-label form-label-sm">MPESA Transaction 2</span><input type="text" id="mpesa-trans2"><button type="button" class="btn-xs btn-xs-green" onclick="pasteAny('mpesa-trans2')">PASTE</button><button type="button" class="btn-xs btn-xs-red" onclick="setFail('mpesa-trans2')">FAIL</button><button type="button" class="btn-xs btn-xs-slate" onclick="clearField('mpesa-trans2')">CLEAR</button></div>
-    <div class="form-row"><span class="form-label form-label-sm">KCB M-Pesa Limit</span><input type="text" id="kcb"><button type="button" class="btn-xs btn-xs-red" onclick="setFail('kcb')">FAIL</button><button type="button" class="btn-xs btn-xs-slate" onclick="clearField('kcb')">CLEAR</button></div>
-    <div class="form-row"><span class="form-label form-label-sm">Storo Bonus</span><input type="text" id="storo"><button type="button" class="btn-xs btn-xs-red" onclick="setFail('storo')">FAIL</button><button type="button" class="btn-xs btn-xs-slate" onclick="clearField('storo')">CLEAR</button></div>
     <div class="form-row"><span class="form-label form-label-sm">Last Bundle Purchase</span><input type="text" id="bundle"><button type="button" class="btn-xs btn-xs-red" onclick="setFail('bundle')">FAIL</button><button type="button" class="btn-xs btn-xs-slate" onclick="clearField('bundle')">CLEAR</button></div>
+      </div>
+    </div>
     <!-- SERIAL NUMBER WITH MASK -->
     <div class="form-row"><span class="form-label form-label-sm">Serial Number</span><input type="text" id="serial-number" class="masked-input" placeholder="89254021-- ----- ----- -----" autocomplete="off" spellcheck="false" onkeydown="serialKeydown(event,this)" onfocus="serialFocus(this)" onblur="serialBlur(this)"><button type="button" class="btn-xs btn-xs-green" onclick="copySerialNumber()">COPY</button><button type="button" class="btn-xs btn-xs-green" onclick="pasteSerialNumber()">PASTE</button><button type="button" class="btn-xs btn-xs-slate" onclick="clearSerialNumber()">CLEAR</button></div>
   </div>
@@ -584,6 +613,7 @@ body.dark-mode .btn-flag-purged.active,body.dark-mode .btn-flag-purged:hover{bac
       <button class="quick-copy-btn" onclick="copyQuickText(this,'Calling Number; is not active\nAdvised to call via Agent/Visit RC','Fraud & Security','CN NOT ACTIVE')">CN NOT ACTIVE</button>
       <button class="quick-copy-btn" onclick="copyQuickText(this,'Calling Number; is Fraudster as per keycomment\nAdvised to Visit RC for SWAP','Fraud & Security','CN FRAUDSTER')">CN FRAUDSTER</button>
       <button class="quick-copy-btn" onclick="copyQuickText(this,'Calling Number; has Been swapped in The Last 72 Hours\nAdvised to call via Agent/Visit RC','Fraud & Security','CN HAS BEEN SWAPPED')">CN HAS BEEN SWAPPED</button>
+      <button class="quick-copy-btn" onclick="copyQuickText(this,'Calling Number; has less than 30 Days On Network\nAdvised to call via Agent/Visit RC','Fraud & Security','CN HAS LESS THAN 30 DAYS')">CN HAS LESS THAN 30 DAYS</button>
       <button class="quick-copy-btn" onclick="copyQuickText(this,'Calling Number; gave wrong MSISDN for swap\nAdvised to confirm and call back ','Fraud & Security','CN WRONG NUMBER')">CN WRONG NUMBER</button>
       <button class="quick-copy-btn" onclick="copyQuickText(this,'Calling number;  has two (2) other sim swap requests within the last 24hrs.\nAdvised to call from an Agent line/Visit RC.','Fraud & Security','CN MAX LIMIT')">CN MAX LIMIT</button>
       <button class="quick-copy-btn" onclick="copyQuickText(this,'Suspected Impersonation\nAdvised to call via Agent/Visit RC','Fraud & Security','SUS-IMPERSONATION')">SUS-IMPERSONATION</button>
@@ -958,6 +988,26 @@ function toggleDarkMode(){
   else{track.classList.remove('on');label.textContent='Dark';icon.textContent='🌙';}
   localStorage.setItem('saf_dark_mode',isDark?'1':'0');
 }
+
+/* SECONDARY VETTING LAYOUT (dual / single column) */
+function toggleLayoutMode(){
+  const isSingle=document.body.classList.toggle('single-col');
+  const track=document.getElementById('layout-track');
+  const label=document.getElementById('layout-label');
+  const icon=document.getElementById('layout-icon');
+  if(isSingle){track.classList.add('on');label.textContent='1-Col';icon.innerHTML='&#9636;';}
+  else{track.classList.remove('on');label.textContent='2-Col';icon.innerHTML='&#9638;';}
+  localStorage.setItem('saf_secondary_layout',isSingle?'single':'dual');
+  showToast(isSingle?'Secondary Vetting: single column':'Secondary Vetting: dual column');
+}
+(function(){
+  if(localStorage.getItem('saf_secondary_layout')==='single'){
+    document.body.classList.add('single-col');
+    document.getElementById('layout-track').classList.add('on');
+    document.getElementById('layout-label').textContent='1-Col';
+    document.getElementById('layout-icon').innerHTML='&#9636;';
+  }
+})();
 (function(){
   if(localStorage.getItem('saf_dark_mode')==='1'){
     document.body.classList.add('dark-mode');

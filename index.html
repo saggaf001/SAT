@@ -632,7 +632,7 @@ body.dark-mode .btn-flag-purged.active,body.dark-mode .btn-flag-purged:hover{bac
     <div class="btn-grid" style="margin-bottom:16px;">
       <button class="quick-copy-btn" onclick="copyQuickText(this,'Recycled line. Advised previous user to register a new line .','Line & Account Issues','RECYCLED')">RECYCLED</button>
       <button class="quick-copy-btn" onclick="copyQuickText(this,'Whitelisted line. Advised the customer to visit a Safaricom Shop for assistance.','Line & Account Issues','WHITELIST')">WHITELIST</button>
-      <button class="quick-copy-btn" onclick="copyQuickText(this,'MNRF-True Purged and advised customer to perfom Location update.','Line & Account Issues','PURGED')">PURGED</button>
+      <button class="quick-copy-btn" onclick="copyQuickText(this,'MNRF-True Purged and advised customer to perform Location update.','Line & Account Issues','PURGED')">PURGED</button>
       <button class="quick-copy-btn" onclick="copyQuickText(this,'Advised the customer to call after 24hrs or visit Safaricom shop for assistance.','Line & Account Issues','PIN-SWAPPED')">PIN-SWAPPED</button>
       <button class="quick-copy-btn" onclick="copyQuickText(this,'Advised registered owner to call.','Line & Account Issues','REG-OWNER')">REG-OWNER</button>
       <button class="quick-copy-btn" onclick="copyQuickText(this,'Advised to undispute line by using primary number on 106 or KYC update. Primary number to unbar by dialling *106*5#','Line & Account Issues','UNDISPUTED')">UNDISPUTED</button>
@@ -1051,7 +1051,7 @@ function switchVettingMode(mode){currentVettingMode=mode;['individual','till'].f
 /* INDIVIDUAL VETTING */
 let startkeyIssued=false,failedVetting=0,swapped=false,customNoteActive=false,customNoteText='';
 let flags={barred:false,menu:false,purged:false};
-const flagTexts={barred:'Suspended and Barred - Advised to visit RC for assistance',menu:'Menu Updated',purged:'MNRF-True Purged and advised customer to perfom Location update'};
+const flagTexts={barred:'Suspended and Barred - Advised to visit RC for assistance',menu:'Menu Updated',purged:'MNRF-True Purged and advised customer to perform Location update'};
 let primaryFailType=null; /* null | 'name' | 'id' | 'yob' */
 function toggleFlag(key){flags[key]=!flags[key];document.getElementById(key+'-btn').classList.toggle('active',flags[key]);if(flags[key])statsBumpVettingButton(key==='barred'?'Barred':key==='menu'?'Menu Updated':'Purged');updateTextArea();showToast(flags[key]?key.toUpperCase()+' status set':key.toUpperCase()+' status removed');}
 function toggleFailedPrimary(){
